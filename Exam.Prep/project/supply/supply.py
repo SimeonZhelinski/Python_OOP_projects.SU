@@ -31,4 +31,4 @@ class Supply(ABC):
 
     @abstractmethod
     def details(self):
-        return f"{self.__class__.__name__}: {self.name}, {self.energy}"
+        pass
