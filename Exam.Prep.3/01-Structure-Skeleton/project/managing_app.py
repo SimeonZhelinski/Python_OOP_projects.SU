@@ -28,8 +28,6 @@ class ManagingApp:
             if v.license_plate_number == license_plate_number:
                 return f"{license_plate_number} belongs to another vehicle."
 
-        current_vehicle = None
-
         if vehicle_type == "PassengerCar":
             current_vehicle = PassengerCar(brand, model, license_plate_number)
         else:
@@ -98,14 +96,15 @@ class ManagingApp:
             for v in damaged_vehicles:
                 v.change_status()
                 v.recharge()
-            count = len(damaged_vehicles)
+            final_count = len(damaged_vehicles)
 
         else:
             for v in range(len(damaged_vehicles), count):
                 damaged_vehicles[v].change_status()
                 damaged_vehicles[v].recharge()
+            final_count = count
 
-        return f"{count} vehicles were successfully repaired!"
+        return f"{final_count} vehicles were successfully repaired!"
 
     def users_report(self):
 
