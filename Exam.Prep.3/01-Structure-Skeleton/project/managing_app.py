@@ -99,7 +99,7 @@ class ManagingApp:
             final_count = len(damaged_vehicles)
 
         else:
-            for v in range(len(damaged_vehicles), count):
+            for v in range(0, count):
                 damaged_vehicles[v].change_status()
                 damaged_vehicles[v].recharge()
             final_count = count
