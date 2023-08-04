@@ -7,9 +7,10 @@ class SecondaryService(BaseService):
 
     def details(self):
         if not self.robots:
-            return f"{SecondaryService.__class__.__name__} Secondary Service:\n" \
+            return f"{self.name} Secondary Service:\n" \
                    f"Robots: none"
 
         else:
-            return f"{SecondaryService.__class__.__name__} Secondary Service:\n" \
-                   f"Robots: {' '.join(self.robots)}"
+            robot_names = [r.name for r in self.robots]
+            return f"{self.name} Secondary Service:\n" \
+                   f"Robots: {' '.join(robot_names)}"
